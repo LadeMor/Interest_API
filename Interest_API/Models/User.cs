@@ -8,11 +8,11 @@ namespace Interest_API.Models
         public int Id { get; set; }
         
         [Required]
-        [StringLength(20)]
+        [StringLength(20, MinimumLength = 3)]
         public string Username { get; set; }
         
         [Required]
-        [StringLength(80)]
+        [StringLength(80, MinimumLength = 8)]
         public string Password { get; set; }
         
         [Required]
@@ -21,7 +21,7 @@ namespace Interest_API.Models
         
         [StringLength(100)]
         public string Description { get; set; }
-        public int Role { get; set; }
+        public int RoleId { get; set; }
         public Int64 Rating { get; set; }
     }
 }
