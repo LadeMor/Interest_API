@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "GQ+lhtVV3nuz8RUjDe20pCQWOTvB/Y899y6dIadzgORk7Yx8HFrUSm/r9755gPmlCTHpT1LcaWB/VEe+o/bioQ==",
+  "dgSpecHash": "TFNP6nwGTndlQ92dnYf7dkjd4xTfltOvAzMrVE8ybdeYgEN9HCFuaMdQXReVBRBkCpuRW8b2v9JZt3RJFc4yPA==",
   "success": true,
   "projectFilePath": "/Users/sergey/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
   "expectedPackageFiles": [
+    "/Users/sergey/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/sergey/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.entityframeworkcore/5.0.0/microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.0/microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.0/microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",
+    "/Users/sergey/.nuget/packages/microsoft.entityframeworkcore.design/5.0.0/microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.entityframeworkcore.relational/5.0.0/microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
+    "/Users/sergey/.nuget/packages/microsoft.entityframeworkcore.tools/5.0.0/microsoft.entityframeworkcore.tools.5.0.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.extensions.caching.abstractions/5.0.0/microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.extensions.caching.memory/5.0.0/microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
