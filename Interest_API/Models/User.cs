@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Interest_API.Models
@@ -22,6 +24,8 @@ namespace Interest_API.Models
         [StringLength(100)]
         public string Description { get; set; }
         public int RoleId { get; set; }
+        public Role Role;
+        public ICollection<Post> Posts { get; set; }
         public Int64 Rating { get; set; }
     }
 }
