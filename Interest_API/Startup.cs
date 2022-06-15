@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Interest_API.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using AppContext = Interest_API.Database.AppContext;
+using AppContext = Interest_API.Database.InterestContext;
 
 namespace Interest_API
 {
@@ -28,7 +29,7 @@ namespace Interest_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppContext>(o =>
+            services.AddDbContext<InterestContext>(o =>
                 o.UseNpgsql(Configuration.GetConnectionString("InterestAppCon")));
             services.AddControllers();
             services.AddSwaggerGen(c =>

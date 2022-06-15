@@ -7,6 +7,7 @@ namespace Interest_API.Models
 {
     public class User
     {
+        [Key]
         public int Id { get; set; }
         
         [Required]
@@ -26,6 +27,5 @@ namespace Interest_API.Models
         public int RoleId { get; set; }
         public Role Role;
         public ICollection<Post> Posts { get; set; }
-        public Int64 Rating { get; set; }
     }
 }
