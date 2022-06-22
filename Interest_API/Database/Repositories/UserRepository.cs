@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Interest_API.Database.Interfaces;
 using Interest_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Interest_API.Database.Repositories
 {
@@ -27,19 +28,23 @@ namespace Interest_API.Database.Repositories
             return user;
         }
 
-        public User GetUserById(int id)
-        {
-            return _interestContext.Users.Find(id);
-        }
-
-        public User GetUserByUsername(string username)
-        {
-            return _interestContext.Users.Find(username);
-        }
-
         public IEnumerable<User> GetAllUsers()
         {
-            return _interestContext.Users.ToList();
+            var users = _interestContext.Users.Include(u => u.Role);
+
+            return users.AsEnumerable();
+        }
+        
+        public IQueryable<User> GetUserById(int id)
+        {
+            var users = _interestContext.Users.Include(u => u.Role);
+            return users.Where(u => u.Id.Equals(id));
+        }
+
+        public IQueryable<User> GetUserByUsername(string username)
+        {
+            var users = _interestContext.Users.Include(u => u.Role);
+            return users.Where(u => u.Username.Equals(username));
         }
 
         public void UpdateUser(User user)

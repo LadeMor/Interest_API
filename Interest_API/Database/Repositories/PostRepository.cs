@@ -19,17 +19,16 @@ namespace Interest_API.Database.Repositories
         
         public IEnumerable<Post> GetAll()
         {
-            return _interestContext.Posts.ToList();
+            var posts = _interestContext.Posts.Include(p => p.User);
+            
+            return posts.AsEnumerable();
         }
 
-        public Post GetById(int id)
+        public IQueryable<Post> GetById(int id)
         {
-            return _interestContext.Posts.Find(id);
-        }
+            var posts = _interestContext.Posts.Include(p => p.User);
 
-        public Post GetByTitle(string title)
-        {
-            return _interestContext.Posts.Find(title);
+            return posts.Where(p => p.Post_Id.Equals(id));
         }
 
         public Post Create(Post post)
