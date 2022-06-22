@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Interest_API.Database.Interfaces;
 using Interest_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Interest_API.Database.Repositories
 {
@@ -16,12 +17,18 @@ namespace Interest_API.Database.Repositories
         
         public IEnumerable<Role> GetAll()
         {
-            return _interestContext.Roles.ToList();
+            var roles = _interestContext.Roles
+                .Include(r => r.Users);
+            
+            return roles.AsEnumerable();
         }
 
-        public Role GetById(int id)
+        public IQueryable<Role> GetById(int id)
         {
-            return _interestContext.Roles.Find(id);
+            var roles = _interestContext.Roles
+                .Include(r => r.Users);
+
+            return roles.Where(r => r.Role_Id.Equals(id));
         }
     }
 }
