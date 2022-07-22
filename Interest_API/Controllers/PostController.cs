@@ -24,6 +24,7 @@ namespace Interest_API.Controllers
             var posts = _postRepository.GetAll();
             var postsModel = posts.Select(p => new PostDTO()
             {
+                Id = p.Post_Id,
                 Title = p.Title,
                 Image = p.Image,
                 Post_Description = p.Post_Description,
@@ -39,6 +40,7 @@ namespace Interest_API.Controllers
             var posts = _postRepository.GetById(id);
             var postsModel = posts.Select(p => new PostDTO()
             {
+                Id = p.Post_Id,
                 Title = p.Title,
                 Image = p.Image,
                 Post_Description = p.Post_Description,
