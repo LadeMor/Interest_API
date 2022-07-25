@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Interest_API.Database.Dtos;
 using Interest_API.Database.Interfaces;
@@ -20,6 +18,12 @@ namespace Interest_API.Controllers
             _userRepository = userRepository;
         }
 
+        [HttpGet("{username}/exist")]
+        public bool UserExist(string username)
+        {
+            return _userRepository.UserExist(username);
+        }
+        
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -69,6 +73,21 @@ namespace Interest_API.Controllers
             });
 
             return Ok(userModel);
+        }
+
+        [HttpPost]
+        public IActionResult AddUser(UserDTO userDto)
+        {
+            var user = new User()
+            {
+                Username = userDto.Username,
+                Password = userDto.Password,
+                Email = userDto.Email,
+                Description = userDto.Description,
+                RoleId = 2
+            };
+            _userRepository.AddUser(user);
+            return Ok();
         }
         
     }
