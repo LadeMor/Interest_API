@@ -19,9 +19,15 @@ namespace Interest_API.Controllers
         }
 
         [HttpGet("{username}/exist")]
-        public bool UserExist(string username)
+        public bool UserExistByUsername(string username)
         {
-            return _userRepository.UserExist(username);
+            return _userRepository.UserExistByUsername(username);
+        }
+
+        [HttpGet("{email}/user")]
+        public bool UserExistByEmail(string email)
+        {
+            return _userRepository.UserExistByEmail(email);
         }
         
         [HttpGet]
@@ -62,6 +68,23 @@ namespace Interest_API.Controllers
         public ActionResult<User> GetByUsername(string username)
         {
             var users = _userRepository.GetUserByUsername(username);
+            var userModel = users.Select(u => new UserDTO()
+            {
+                Id = u.Id,
+                Username = u.Username,
+                Password = u.Password,
+                Email = u.Email,
+                Description = u.Description,
+                RoleId = u.RoleId
+            });
+
+            return Ok(userModel);
+        }
+        
+        [HttpGet("{email}/userbyemail")]
+        public ActionResult<User> GetByEmail(string email)
+        {
+            var users = _userRepository.GetUserByEmail(email);
             var userModel = users.Select(u => new UserDTO()
             {
                 Id = u.Id,

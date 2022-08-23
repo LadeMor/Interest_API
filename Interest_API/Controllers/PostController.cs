@@ -17,7 +17,7 @@ namespace Interest_API.Controllers
         {
             _postRepository = postRepository;
         }
-
+        
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -55,11 +55,12 @@ namespace Interest_API.Controllers
         {
             var post = new Post()
             {
-                User_Id = 1,
+                User_Id = postDto.User_Id,
+                Post_Id = postDto.Id,
                 Title = postDto.Title,
                 Image = postDto.Image,
                 Post_Description = postDto.Post_Description,
-                Author = "LadeMor"
+                Author = postDto.Author
             };
 
             _postRepository.Create(post);

@@ -16,9 +16,14 @@ namespace Interest_API.Database.Repositories
             _interestContext = context;
         }
 
-        public bool UserExist(string username)
+        public bool UserExistByUsername(string username)
         {
             return _interestContext.Users.Any(u => u.Username == username);
+        }
+        
+        public bool UserExistByEmail(string email)
+        {
+            return _interestContext.Users.Any(u => u.Email == email);
         }
 
         public User AddUser(User user)
@@ -45,6 +50,12 @@ namespace Interest_API.Database.Repositories
         {
             var users = _interestContext.Users.Include(u => u.Role);
             return users.Where(u => u.Username.Equals(username));
+        }
+        
+        public IQueryable<User> GetUserByEmail(string email)
+        {
+            var users = _interestContext.Users.Include(u => u.Role);
+            return users.Where(u => u.Email.Equals(email));
         }
 
         public void UpdateUser(User user)
