@@ -25,6 +25,7 @@ namespace Interest_API.Controllers
             var postsModel = posts.Select(p => new PostDTO()
             {
                 Id = p.Post_Id,
+                User_Id = p.User_Id,
                 Title = p.Title,
                 Image = p.Image,
                 Post_Description = p.Post_Description,
@@ -41,6 +42,7 @@ namespace Interest_API.Controllers
             var postsModel = posts.Select(p => new PostDTO()
             {
                 Id = p.Post_Id,
+                User_Id = p.User_Id,
                 Title = p.Title,
                 Image = p.Image,
                 Post_Description = p.Post_Description,
@@ -64,6 +66,22 @@ namespace Interest_API.Controllers
             };
 
             _postRepository.Create(post);
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult UpdatePost(PostDTO postDto)
+        {
+            var post = new Post()
+            {
+                User_Id = postDto.User_Id,
+                Post_Id = postDto.Id,
+                Title = postDto.Title,
+                Image = postDto.Image,
+                Post_Description = postDto.Post_Description,
+                Author = postDto.Author
+            };
+            _postRepository.Update(post);
             return Ok();
         }
 
