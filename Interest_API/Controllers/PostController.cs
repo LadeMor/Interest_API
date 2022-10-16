@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using Interest_API.Database.Dtos;
@@ -29,7 +30,8 @@ namespace Interest_API.Controllers
                 Title = p.Title,
                 Image = p.Image,
                 Post_Description = p.Post_Description,
-                Author = p.User.Username
+                Author = p.User.Username,
+                Date_Of_Creation = p.Date_Of_Creation
             });
 
             return Ok(postsModel);
@@ -46,7 +48,8 @@ namespace Interest_API.Controllers
                 Title = p.Title,
                 Image = p.Image,
                 Post_Description = p.Post_Description,
-                Author = p.User.Username
+                Author = p.User.Username,
+                Date_Of_Creation = p.Date_Of_Creation
             });
 
             return Ok(postsModel);
@@ -62,7 +65,8 @@ namespace Interest_API.Controllers
                 Title = postDto.Title,
                 Image = postDto.Image,
                 Post_Description = postDto.Post_Description,
-                Author = postDto.Author
+                Author = postDto.Author,
+                Date_Of_Creation = DateTime.Now
             };
 
             _postRepository.Create(post);
@@ -79,7 +83,8 @@ namespace Interest_API.Controllers
                 Title = postDto.Title,
                 Image = postDto.Image,
                 Post_Description = postDto.Post_Description,
-                Author = postDto.Author
+                Author = postDto.Author,
+                Date_Of_Creation = postDto.Date_Of_Creation
             };
             _postRepository.Update(post);
             return Ok();

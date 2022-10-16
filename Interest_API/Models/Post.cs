@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Interest_API.Models
@@ -19,5 +20,6 @@ namespace Interest_API.Models
         [StringLength(50)]
         public string Post_Description { get; set; }
         public string Author { get; set; }
+        public DateTime Date_Of_Creation { get; set; }
     }
 }

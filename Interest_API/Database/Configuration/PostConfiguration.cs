@@ -1,3 +1,4 @@
+using System;
 using Interest_API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -31,7 +32,8 @@ namespace Interest_API.Database.Configuration
                     Title = "Post1",
                     Image = "https://i.pinimg.com/474x/ff/13/f3/ff13f379c308e9753a6f94ea179caf47.jpg",
                     Post_Description = "First post in my app",
-                    Author = "LadeMor" 
+                    Author = "LadeMor" ,
+                    Date_Of_Creation = Convert.ToDateTime("05/29/2015")
                 },
                 
                 new Post {
@@ -40,7 +42,8 @@ namespace Interest_API.Database.Configuration
                     Title = "Cool car",
                     Image = "https://i.pinimg.com/474x/3b/ff/38/3bff3800984503efe1edaeb596755b22.jpg",
                     Post_Description = "Really cool car",
-                    Author = "LadeMor"
+                    Author = "LadeMor",
+                    Date_Of_Creation = Convert.ToDateTime("06/13/2018")
                 },
                 new Post {
                     Post_Id = 3,
@@ -48,7 +51,8 @@ namespace Interest_API.Database.Configuration
                     Title = "Cool anime",
                     Image = "https://i.pinimg.com/474x/ee/cc/60/eecc60d000dbe7c6d5bf91ec9e46ed45.jpg",
                     Post_Description = "Really cool anime",
-                    Author = "LadeMor"
+                    Author = "LadeMor",
+                    Date_Of_Creation = Convert.ToDateTime("01/04/2020")
                 },
                 new Post {
                     Post_Id = 4,
@@ -56,7 +60,8 @@ namespace Interest_API.Database.Configuration
                     Title = "Cool car",
                     Image = "https://i.pinimg.com/474x/3b/ff/38/3bff3800984503efe1edaeb596755b22.jpg",
                     Post_Description = "Really cool car",
-                    Author = "LadeMor"
+                    Author = "LadeMor",
+                    Date_Of_Creation = Convert.ToDateTime("04/22/2019")
                 });
         }
     }

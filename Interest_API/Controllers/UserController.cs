@@ -29,6 +29,12 @@ namespace Interest_API.Controllers
         {
             return _userRepository.UserExistByEmail(email);
         }
+
+        [HttpGet("{password}/{email}")]
+        public bool UserValidateEmail(string password, string email)
+        {
+            return _userRepository.UserEmailValidate(password, email);
+        }
         
         [HttpGet]
         public IActionResult GetAll()

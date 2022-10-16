@@ -26,6 +26,13 @@ namespace Interest_API.Database.Repositories
             return _interestContext.Users.Any(u => u.Email == email);
         }
 
+        public bool UserEmailValidate(string email, string password)
+        {
+            var users = _interestContext.Users.Include(u => u.Role);
+            var user = users.AsEnumerable().FirstOrDefault(u => u.Email == email);
+            return user.Password == password;
+        }
+
         public User AddUser(User user)
         {
             _interestContext.Add(user);

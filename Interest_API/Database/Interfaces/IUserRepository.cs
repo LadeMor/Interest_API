@@ -9,6 +9,7 @@ namespace Interest_API.Database.Interfaces
     {
         bool UserExistByUsername(string username);
         bool UserExistByEmail(string username);
+        bool UserEmailValidate(string email, string password);
         User AddUser(User user);
         IEnumerable<User> GetAllUsers();
         IQueryable<User> GetUserById(int id);

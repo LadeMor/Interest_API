@@ -1,3 +1,5 @@
+using System;
+
 namespace Interest_API.Database.Dtos
 {
     public class PostDTO
@@ -8,5 +10,6 @@ namespace Interest_API.Database.Dtos
         public string Image { get; set; }
         public string Post_Description { get; set; }
         public string Author { get; set; }
+        public DateTime Date_Of_Creation { get; set; }
     }
 }
