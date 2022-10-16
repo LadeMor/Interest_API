@@ -27,5 +27,6 @@ namespace Interest_API.Models
         public int RoleId { get; set; }
         public Role Role;
         public ICollection<Post> Posts { get; set; }
+        public string Profile_Photo { get; set; }
     }
 }

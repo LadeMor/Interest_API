@@ -47,7 +47,8 @@ namespace Interest_API.Controllers
                 Password = u.Password,
                 Email = u.Email,
                 Description = u.Description,
-                RoleId = u.RoleId
+                RoleId = u.RoleId,
+                Profile_Photo = u.Profile_Photo
             });
 
             return Ok(userModel);
@@ -64,7 +65,8 @@ namespace Interest_API.Controllers
                 Password = u.Password,
                 Email = u.Email,
                 Description = u.Description,
-                RoleId = u.RoleId
+                RoleId = u.RoleId,
+                Profile_Photo = u.Profile_Photo
             });
 
             return Ok(userModel);
@@ -81,7 +83,8 @@ namespace Interest_API.Controllers
                 Password = u.Password,
                 Email = u.Email,
                 Description = u.Description,
-                RoleId = u.RoleId
+                RoleId = u.RoleId,
+                Profile_Photo = u.Profile_Photo
             });
 
             return Ok(userModel);
@@ -98,7 +101,8 @@ namespace Interest_API.Controllers
                 Password = u.Password,
                 Email = u.Email,
                 Description = u.Description,
-                RoleId = u.RoleId
+                RoleId = u.RoleId,
+                Profile_Photo = u.Profile_Photo
             });
 
             return Ok(userModel);
@@ -113,7 +117,8 @@ namespace Interest_API.Controllers
                 Password = userDto.Password,
                 Email = userDto.Email,
                 Description = userDto.Description,
-                RoleId = 2
+                RoleId = 2,
+                Profile_Photo = userDto.Profile_Photo
             };
             _userRepository.AddUser(user);
             return Ok();

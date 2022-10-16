@@ -11,5 +11,6 @@ namespace Interest_API.Database.Dtos
         public string Email { get; set; }
         public string Description { get; set; }
         public int RoleId { get; set; }
+        public string Profile_Photo { get; set; }
     }
 }

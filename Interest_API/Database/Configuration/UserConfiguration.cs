@@ -34,28 +34,36 @@ namespace Interest_API.Database.Configuration
                     Password = "1234", 
                     Email = "lademor@gmail.com", 
                     Description = "Web developer", 
-                    RoleId = 1},
+                    RoleId = 1,
+                    Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/"
+                },
                 
                 new User {Id = 2, 
                     Username = "Jabe", 
                     Password = "1111", 
                     Email = "jabe@gmail.com", 
                     Description = "Artist", 
-                    RoleId = 2},
+                    RoleId = 2,
+                    Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/"
+                },
                 
                 new User {Id = 3, 
                     Username = "Flomic", 
                     Password = "2222", 
                     Email = "flomy@gmail.com", 
                     Description = "Gamer", 
-                    RoleId = 2},
+                    RoleId = 2,
+                    Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/"
+                },
                 
                 new User {Id = 4, 
                     Username = "Swonsonn", 
                     Password = "3333", 
                     Email = "swon@gmail.com", 
                     Description = "C++ game developer", 
-                    RoleId = 2}
+                    RoleId = 2,
+                    Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/"
+                }
             );
         }
     }

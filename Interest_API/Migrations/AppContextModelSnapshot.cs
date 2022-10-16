@@ -150,6 +150,9 @@ namespace Interest_API.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("character varying(80)");
 
+                    b.Property<string>("Profile_Photo")
+                        .HasColumnType("text");
+
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
 
@@ -171,6 +174,7 @@ namespace Interest_API.Migrations
                             Description = "Web developer",
                             Email = "lademor@gmail.com",
                             Password = "1234",
+                            Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/",
                             RoleId = 1,
                             Username = "LadeMor"
                         },
@@ -180,6 +184,7 @@ namespace Interest_API.Migrations
                             Description = "Artist",
                             Email = "jabe@gmail.com",
                             Password = "1111",
+                            Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/",
                             RoleId = 2,
                             Username = "Jabe"
                         },
@@ -189,6 +194,7 @@ namespace Interest_API.Migrations
                             Description = "Gamer",
                             Email = "flomy@gmail.com",
                             Password = "2222",
+                            Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/",
                             RoleId = 2,
                             Username = "Flomic"
                         },
@@ -198,6 +204,7 @@ namespace Interest_API.Migrations
                             Description = "C++ game developer",
                             Email = "swon@gmail.com",
                             Password = "3333",
+                            Profile_Photo = "https://www.pinterest.com/pin/863354191081075454/",
                             RoleId = 2,
                             Username = "Swonsonn"
                         });
