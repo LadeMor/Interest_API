@@ -34,6 +34,7 @@ namespace Interest_API
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddDbContext<InterestContext>(o =>
                 o.UseNpgsql(Configuration.GetConnectionString("InterestAppCon")));
             services.AddControllers();

@@ -19,6 +19,67 @@ namespace Interest_API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("Interest_API.Models.Comment", b =>
+                {
+                    b.Property<int>("Comment_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .UseIdentityByDefaultColumn();
+
+                    b.Property<string>("Author")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Date_Of_Comment_Creation")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("Post_Comment_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("User_Comment_Id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Comment_Id");
+
+                    b.HasIndex("Post_Comment_Id");
+
+                    b.HasIndex("User_Comment_Id");
+
+                    b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            Comment_Id = 1,
+                            Author = "Gaib",
+                            Date_Of_Comment_Creation = new DateTime(2018, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Post_Comment_Id = 1,
+                            Text = "Really Cool post i really like it",
+                            User_Comment_Id = 5
+                        },
+                        new
+                        {
+                            Comment_Id = 2,
+                            Author = "LadeMorsdf",
+                            Date_Of_Comment_Creation = new DateTime(2020, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Post_Comment_Id = 1,
+                            Text = "Woowww amazing!!!!",
+                            User_Comment_Id = 7
+                        },
+                        new
+                        {
+                            Comment_Id = 3,
+                            Author = "Jabe",
+                            Date_Of_Comment_Creation = new DateTime(2020, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Post_Comment_Id = 1,
+                            Text = "Do you know the artist???",
+                            User_Comment_Id = 2
+                        });
+                });
+
             modelBuilder.Entity("Interest_API.Models.Post", b =>
                 {
                     b.Property<int>("Post_Id")
@@ -210,6 +271,25 @@ namespace Interest_API.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Interest_API.Models.Comment", b =>
+                {
+                    b.HasOne("Interest_API.Models.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("Post_Comment_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Interest_API.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("User_Comment_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Interest_API.Models.Post", b =>
                 {
                     b.HasOne("Interest_API.Models.User", "User")
@@ -232,6 +312,11 @@ namespace Interest_API.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("Interest_API.Models.Post", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
             modelBuilder.Entity("Interest_API.Models.Role", b =>
                 {
                     b.Navigation("Users");
@@ -239,6 +324,8 @@ namespace Interest_API.Migrations
 
             modelBuilder.Entity("Interest_API.Models.User", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
