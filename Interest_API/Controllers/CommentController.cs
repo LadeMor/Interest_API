@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Interest_API.Database.Dtos;
 using Interest_API.Database.Interfaces;
@@ -32,6 +33,28 @@ namespace Interest_API.Controllers
             });
 
             return Ok(commentModel);
+        }
+
+        [HttpPost]
+        public IActionResult CreateComment(CommentDTO commentDto)
+        {
+            var comment = new Comment()
+            {
+                Comment_Id = commentDto.Comment_Id,
+                Post_Comment_Id = commentDto.Post_Comment_Id,
+                User_Comment_Id = commentDto.User_Comment_Id,
+                Author = commentDto.Author,
+                Text = commentDto.Text,
+                Date_Of_Comment_Creation = DateTime.Now
+            };
+            _commentRepository.Create(comment);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public void DeleteComment(int id)
+        {
+            _commentRepository.Delete(id);
         }
     }
 }

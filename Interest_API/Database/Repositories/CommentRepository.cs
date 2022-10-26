@@ -23,7 +23,9 @@ namespace Interest_API.Database.Repositories
 
         public Comment Create(Comment comment)
         {
-            throw new System.NotImplementedException();
+            _interestContext.Add(comment);
+            _interestContext.SaveChanges();
+            return comment;
         }
 
         public void Update(Comment comment)
@@ -33,7 +35,9 @@ namespace Interest_API.Database.Repositories
 
         public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var commentToDelete = _interestContext.Comments.Find(id);
+            _interestContext.Comments.Remove(commentToDelete);
+            _interestContext.SaveChanges();
         }
     }
 }
