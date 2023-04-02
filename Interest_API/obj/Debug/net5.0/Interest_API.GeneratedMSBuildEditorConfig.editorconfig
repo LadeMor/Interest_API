@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Interest_API
-build_property.ProjectDir = /Users/sergey/RiderProjects/Interest_API/Interest_API/
+build_property.ProjectDir = /Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/

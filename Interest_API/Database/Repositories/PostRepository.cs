@@ -24,11 +24,13 @@ namespace Interest_API.Database.Repositories
             return posts.AsEnumerable();
         }
 
-        public IQueryable<Post> GetById(int id)
+        public Post GetById(int id)
         {
-            var posts = _interestContext.Posts.Include(p => p.User);
+            var post = _interestContext.Posts
+                .Include(p => p.User)
+                .SingleOrDefault(p => p.Post_Id == id);
 
-            return posts.Where(p => p.Post_Id.Equals(id));
+            return post;
         }
 
         public Post Create(Post post)

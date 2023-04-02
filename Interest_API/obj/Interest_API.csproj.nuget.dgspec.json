@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sergey/RiderProjects/Interest_API/Interest_API/Interest_API.csproj": {}
+    "/Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/Interest_API.csproj": {}
   },
   "projects": {
-    "/Users/sergey/RiderProjects/Interest_API/Interest_API/Interest_API.csproj": {
+    "/Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/Interest_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sergey/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
+        "projectUniqueName": "/Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
         "projectName": "Interest_API",
-        "projectPath": "/Users/sergey/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
+        "projectPath": "/Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
         "packagesPath": "/Users/sergey/.nuget/packages/",
-        "outputPath": "/Users/sergey/RiderProjects/Interest_API/Interest_API/obj/",
+        "outputPath": "/Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/sergey/.nuget/NuGet/NuGet.Config"

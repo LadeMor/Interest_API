@@ -123,6 +123,23 @@ namespace Interest_API.Controllers
             _userRepository.AddUser(user);
             return Ok();
         }
+
+        [HttpPut]
+        public IActionResult UpdateUser(UserDTO userDto)
+        {
+            var user = new User()
+            {
+                Id = userDto.Id,
+                Username = userDto.Username,
+                Password = userDto.Password,
+                Email = userDto.Email,
+                Description = userDto.Description,
+                RoleId = userDto.RoleId,
+                Profile_Photo = userDto.Profile_Photo
+            };
+            _userRepository.UpdateUser(user);
+            return Ok();
+        }
         
     }
 }

@@ -9,7 +9,7 @@ namespace Interest_API.Database.Interfaces
     public interface IPostRepository
     {
         IEnumerable<Post> GetAll();
-        IQueryable<Post> GetById(int id);
+        Post GetById(int id);
         Post Create(Post post);
         void Update(Post post);
         void Delete(int id);

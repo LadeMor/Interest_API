@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TFNP6nwGTndlQ92dnYf7dkjd4xTfltOvAzMrVE8ybdeYgEN9HCFuaMdQXReVBRBkCpuRW8b2v9JZt3RJFc4yPA==",
+  "dgSpecHash": "+q7oIBmHILGmeCzdUENRQTUJtwOK6yAyyE7WdPFGOaG8oeJnsDj0Cbbq37InATZYfNjZiB815SPb4xtoxUvt0A==",
   "success": true,
-  "projectFilePath": "/Users/sergey/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
+  "projectFilePath": "/Users/sergey/Programing/RiderProjects/Interest_API/Interest_API/Interest_API.csproj",
   "expectedPackageFiles": [
     "/Users/sergey/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/sergey/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
